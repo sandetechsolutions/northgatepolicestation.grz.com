@@ -1,11 +1,11 @@
 # 🇿🇲 Zambia Police Service  
 ### **Northgate Police Station – Digital Platform**
 
-![Zambia Police Logo - Large Format](logo.jfif)
+!(logo.jfif)
 
 ---
 
-## 👋 Welcome!
+## 
 
 Welcome to the official **Zambia Police Service Digital Platform** for **Northgate Police Station**.
 
@@ -18,7 +18,7 @@ This platform is designed to serve **you**, the citizen, by offering a secure an
 
 ---
 
-## 🔐 [Click here to log in](login.html)
+## [Click here to log in](login.html)
 
 > Help us build a safer Zambia. **If you witness or are a victim of any criminal activity**, we strongly encourage you to report it through this platform or visit your nearest police post.
 
