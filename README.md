@@ -1,7 +1,7 @@
 #  Zambia Police Service  
 ### **NORTH-GATE POLICE STATION DIGITAL PLATFORM**
 
-<img src="logo.jfif" alt="Zambia Police Logo" width="120" height="120" />
+<img src="logo.jfif" alt="Zambia Police Logo" width="200" height="400" />
 
 
 ---
