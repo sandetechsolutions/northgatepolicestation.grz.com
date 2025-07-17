@@ -1,4 +1,4 @@
-# 🇿🇲 Zambia Police Service  
+#  Zambia Police Service  
 ### **Northgate Police Station – Digital Platform**
 
 !(logo.jfif)
