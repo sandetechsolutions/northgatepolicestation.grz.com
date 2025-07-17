@@ -1,5 +1,5 @@
 #  Zambia Police Service  
-### **Northgate Police Station – Digital Platform**
+### **NORTH-GATE POLICE STATION DIGITAL PLATFORM**
 
 <img src="logo.jfif" alt="Zambia Police Logo" width="120" height="120" />
 
