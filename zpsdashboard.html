@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZAMBIA POLICE SERVICE ONLINE DIGITAL CITIZENS SPACE</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #000;
+      position: relative;
+    }
+
+    /* Watermark */
+    body::before {
+      content: "";
+      background: url('zp.jfif') no-repeat center center;
+      background-size: 600px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      opacity: 0.05;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    header {
+      background-color: #0044cc;
+      color: white;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 2;
+      position: relative;
+      margin-left: 200px;
+    }
+
+    header img.logo {
+      height: 60px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    .side-nav {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
+    }
+
+    .side-nav .dropdown {
+      position: relative;
+    }
+
+    .side-nav .dropdown button {
+      background-color: #0044cc;
+      color: white;
+      padding: 10px 16px;
+      font-size: 15px;
+      border: none;
+      border-radius: 5px;
+      text-align: left;
+      cursor: pointer;
+      width: 160px;
+    }
+
+    .side-nav .dropdown-content {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 180px;
+      z-index: 9999;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .side-nav .dropdown-content a {
+      color: #0044cc;
+      padding: 10px 12px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .side-nav .dropdown-content a:hover {
+      background-color: #f0f0f0;
+      color: limegreen;
+    }
+
+    .side-nav .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .slider {
+      overflow: hidden;
+      white-space: nowrap;
+      background: #e3f2fd;
+      padding: 10px 0;
+      border-top: 2px solid #0044cc;
+      border-bottom: 2px solid #0044cc;
+      margin-left: 200px;
+    }
+
+    .slider img {
+      height: 100px;
+      margin: 0 15px;
+      animation: scroll-left 25s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .news-ticker {
+      background: limegreen;
+      color: white;
+      padding: 8px;
+      font-weight: bold;
+      overflow: hidden;
+      margin-left: 200px;
+    }
+
+    .news-ticker span {
+      display: inline-block;
+      white-space: nowrap;
+      animation: ticker 20s linear infinite;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .search-section {
+      text-align: center;
+      background-color: #e8f5e9;
+      padding: 15px;
+      margin-left: 200px;
+    }
+
+    .search-section input,
+    .search-section select {
+      padding: 10px;
+      font-size: 16px;
+      margin: 8px;
+      border: 2px solid limegreen;
+      border-radius: 5px;
+      width: 250px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+      padding: 30px;
+      margin-left: 200px;
+    }
+
+    .department-card {
+      background-color: #f0f8ff;
+      border-left: 6px solid limegreen;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 68, 204, 0.1);
+      padding: 10px;
+      transition: transform 0.2s;
+    }
+
+    .department-card:hover {
+      transform: scale(1.02);
+    }
+
+    .department-card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 5px;
+    }
+
+    .department-card h3 {
+      font-size: 1em;
+      margin: 5px 0;
+      color: #0044cc;
+    }
+
+    .department-card p {
+      font-size: 0.85em;
+      margin: 3px 0;
+    }
+
+    footer {
+      background-color: #0044cc;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-left: 200px;
+    }
+ /* Slider */
+    .slider {
+      overflow: hidden;
+      white-space: nowrap;
+      background: #e3f2fd;
+      padding: 10px 0;
+      border-top: 2px solid #0044cc;
+      border-bottom: 2px solid #0044cc;
+      position: relative;
+      z-index: 5;
+    }
+    .slider img {
+      height: 100px;
+      margin: 0 15px;
+      display: inline-block;
+      animation: scroll-left 25s linear infinite;
+      vertical-align: middle;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="side-nav">
+  <div class="dropdown">
+    <button>Departments</button>
+    <div class="dropdown-content">
+<a href="zpd.html">Police Directory Portal</a>
+      <a href="#criminal">Criminal</a>
+      <a href="#traffic">Traffic</a>
+      <a href="#cyber">Cyber Crime</a>
+      <a href="#narcotics">Narcotics</a>
+    </div>
+  </div>
+
+<div class="dropdown">
+    <button>Report</button>
+    <div class="dropdown-content">
+      <a href="#Stolen/Missing Phone">Stolen/Missing Phone</a>
+      <a href="#Missing Nrc">Missing Nrc</a>
+      <a href="#Assault">Assault</a>
+      <a href="#Public Riots">Public Riots</a>
+    </div>
+  </div>
+
+
+  <div class="dropdown">
+    <button>Recruitment</button>
+    <div class="dropdown-content">
+      <a href="#apply">How to Apply</a>
+      <a href="#criteria">Eligibility</a>
+      <a href="#training">Training Info</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button>About Us</button>
+    <div class="dropdown-content">
+      <a href="#mission">Mission</a>
+      <a href="#history">History</a>
+      <a href="#leadership">Leadership</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button>Policy</button>
+    <div class="dropdown-content">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#conduct">Code of Conduct</a>
+      <a href="#ethics">Ethics</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <img src="zp.jfif" alt="Police Logo" class="logo">
+  <h1>ZAMBIA POLICE SERVICE ONLINE DIGITAL CITIZENS SPACE</h1>
+</header>
+
+ <!-- Image Slider -->
+  <div class="slider" aria-label="Scrolling images of police stations">
+    <img src="P1.jpg" alt="Police Station 1" />
+<img src="P2.jpg" alt="Police Station 2" />
+<img src="P3.jpg" alt="Police Station 3" />
+<img src="P4.jpg" alt="Police Station 4" />
+  </div>
+
+<div class="news-ticker">
+  <span> Report Stolen Phones/Cars | Report Crime | 📢 Traffic Week Live | 🎓 Youth Training in Ndola</span>
+</div>
+
+ <!-- Search and Province Filter -->
+  <section class="search-section" aria-label="Search and filter police departments">
+    <input type="text" id="searchInput" aria-label="Search departments" placeholder="Search departments..." onkeyup="searchDepartments()" />
+    <select id="provinceSelect" aria-label="Select province" onchange="filterByProvince()">
+      <option value="">-- Select Province --</option>
+      <option value="Lusaka">Lusaka</option>
+      <option value="Copperbelt">Copperbelt</option>
+      <option value="Central">Central</option>
+      <option value="Eastern">Eastern</option>
+      <option value="Western">Western</option>
+      <option value="Southern">Southern</option>
+      <option value="Northern">Northern</option>
+      <option value="Muchinga">Muchinga</option>
+      <option value="Luapula">Luapula</option>
+      <option value="North-Western">North-Western</option>
+    </select>
+  </section>
+
+<section id="departments" class="grid-container"></section>
+
+<!-- Google Maps Section -->
+ <h2 style="text-align:center; color:#0044cc;"> Zambia Police Locations</h2>
+<div style="text-align:center;">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6363583.85300648!2d20.46970765168486!3d-13.13389744178102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1940f2d8f053b34b%3A0x1f920ac3fdfc186a!2sZambia!5e0!3m2!1sen!2szm!4v1718571222345!5m2!1sen!2szm"
+    width="90%"
+    height="500"
+    style="border:3px solid limegreen; border-radius:10px;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+
+<footer>
+  © Sande Tech Solutions |  2025 Zambia Police Service
+</footer>
+
+<script>
+    // Departments data by province
+    const departmentsData = {
+      "Lusaka": [
+        {
+          name: "CID Lusaka",
+          image: "https://via.placeholder.com/300x150?text=CID+Lusaka",
+          contact: "0971-123456",
+          alternatives: ["0971-888777", "0971-556677"]
+        },
+        {
+          name: "Traffic Lusaka",
+          image: "https://via.placeholder.com/300x150?text=Traffic+Lusaka",
+          contact: "0972-654321",
+          alternatives: ["0972-111222", "0972-333444"]
+        },
+        {
+          name: "Narcotics Lusaka",
+          image: "https://via.placeholder.com/300x150?text=Narcotics+Lusaka",
+          contact: "0971-222333",
+          alternatives: ["0971-999000", "0971-123789"]
+        }
+      ],
+      "Copperbelt": [
+        {
+          name: "CID Copperbelt",
+          image: "https://via.placeholder.com/300x150?text=CID+Copperbelt",
+          contact: "0973-555111",
+          alternatives: ["0973-222333", "0973-999888"]
+        },
+        {
+          name: "Anti-Robbery Copperbelt",
+          image: "https://via.placeholder.com/300x150?text=Anti-Robbery+Copperbelt",
+          contact: "0974-123123",
+          alternatives: ["0974-456456", "0974-789789"]
+        }
+      ],
+      "Southern": [
+        {
+          name: "GBV Southern",
+          image: "https://via.placeholder.com/300x150?text=GBV+Southern",
+          contact: "0975-987654",
+          alternatives: ["0975-321321", "0975-654987"]
+        }
+      ],
+      // Add other provinces as needed
+      "Central": [],
+      "Eastern": [],
+      "Western": [],
+      "Northern": [],
+      "Muchinga": [],
+      "Luapula": [],
+      "North-Western": []
+    };
+
+
+  function renderDepartments(province) {
+    const container = document.getElementById("departments");
+    container.innerHTML = "";
+
+    if (!departmentsData[province]) return;
+
+    departmentsData[province].forEach(dept => {
+      const card = document.createElement("div");
+      card.className = "department-card";
+      card.innerHTML = `
+        <img src="${dept.image}" alt="${dept.name}" />
+        <h3>${dept.name}</h3>
+        <p>Main: ${dept.contact}</p>
+        ${dept.alternatives.map(a => `<p>Alt: ${a}</p>`).join("")}
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function filterByProvince() {
+    const selectedProvince = document.getElementById("provinceSelect").value;
+    document.getElementById("searchInput").value = "";
+    renderDepartments(selectedProvince);
+  }
+
+  function searchDepartments() {
+    let input = document.getElementById("searchInput").value.toUpperCase();
+    let cards = document.getElementsByClassName("department-card");
+
+     for (let i = 0; i < cards.length; i++) {
+        const nameElem = cards[i].getElementsByTagName("h3")[0];
+        const nameText = nameElem.textContent || nameElem.innerText;
+        cards[i].style.display = nameText.toUpperCase().indexOf(input) > -1 ? "" : "none";
+      }
+    }
+
+    // Initial load: no province selected, no departments shown
+    renderDepartments("");
+  </script>
+
+<!-- Footer Section -->
+<div style="display: flex; justify-content: space-between; align-items: flex-start; background-color: #f0f0f0; padding: 30px; border-top: 4px solid #0044cc; flex-wrap: wrap;">
+
+  <!-- Bottom Left: External Links -->
+  <div style="flex: 1; min-width: 300px; max-width: 400px;">
+    <h2 style="color:#0044cc;"> External Government Links</h2>
+
+    <a href="https://www.zicta.zm/" target="_blank" style="text-decoration: none; display: block; margin-bottom: 15px;">
+      <div style="background-color:#f0f8ff; border-left: 5px solid #4caf50; border-radius:10px; padding:15px;">
+        <h4 style="color:#0044cc; margin:0;">ZICTA</h4>
+        <p style="margin:5px 0; color:#333;">ZICTA House, Stand No. 4909, Independence Ave, Lusaka</p>
+      </div>
+    </a>
+
+    <a href="https://www.mohais.gov.zm/" target="_blank" style="text-decoration: none; display: block; margin-bottom: 15px;">
+      <div style="background-color:#f0f8ff; border-left: 5px solid #4caf50; border-radius:10px; padding:15px;">
+        <h4 style="color:#0044cc; margin:0;">Ministry of Home Affairs</h4>
+        <p style="margin:5px 0; color:#333;">Ministerial Complex, Independence Ave, Lusaka</p>
+      </div>
+    </a>
+
+    <a href="https://www.mod.gov.zm/" target="_blank" style="text-decoration: none; display: block;">
+      <div style="background-color:#f0f8ff; border-left: 5px solid #4caf50; border-radius:10px; padding:15px;">
+        <h4 style="color:#0044cc; margin:0;">Ministry of Defence & Security</h4>
+        <p style="margin:5px 0; color:#333;">Ministry of Defence HQ, Burma Road, Lusaka</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Bottom Right: Zambia Police HQ Location -->
+  <div style="flex: 1; min-width: 300px; max-width: 500px; text-align: center;">
+    <h2 style="color:#0044cc;"> Zambia Police Headquarters</h2>
+    <p style="color:#333;">Independence Avenue, P.O Box 50103, Ridgeway, Lusaka, Zambia</p>
+
+    <!-- Google Maps Embed -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.869884810812!2d28.310058115344135!3d-15.419367989242384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408c7d1bbfc4e9%3A0x3bb80c9e61f76dc9!2sZambia%20Police%20Headquarters!5e0!3m2!1sen!2szm!4v1718546485024!5m2!1sen!2szm"
+      width="100%" height="250" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+</body>
+</html>

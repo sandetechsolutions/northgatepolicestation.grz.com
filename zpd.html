@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zambia Police Stations Directory</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #0044cc;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+    }
+    th {
+      background-color: #0044cc;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    @media(max-width: 768px){
+      table, th, td {
+        font-size: 14px;
+      }
+    }
+
+    /* Watermark */
+    body::before {
+      content: "";
+      background: url('zp.jfif') no-repeat center center;
+      background-size: 600px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      opacity: 0.05;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<header>
+  <img src="zp.jfif" alt="Police Logo" class="logo">
+</header>
+
+<body>
+  <h1>ZAMBIA POLICE STATION DIRECTORY</h1>
+
+  <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for city, station, or address..." />
+
+  <table id="policeTable">
+    <thead>
+      <tr>
+        <th>CITY</th>
+        <th>POLICE STATION</th>
+        <th>ADDRESS</th>
+        <th>HOURS</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr>
+      <td>Kabwe</td>
+      <td><a href="stations/central_kabwe.html" target="_blank">Central Police Station</a></td>
+      <td>Buntungwa St, Kabwe, Zambia</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Lusaka</td>
+      <td><a href="police stations/ngpp.html" target="_blank">North Gate Police Station</a></td>
+      <td>Lusaka, Zambia</td>
+      <td>Open 24 Hours</td>
+    </tr>
+    <tr>
+      <tr><td>Kabwe</td><td>Central Police Station</td><td>Buntungwa St, Kabwe, Zambia</td><td></td></tr>
+      <tr><td>Lusaka</td><td>Central Police Station</td><td>Lusaka, Zambia</td><td></td></tr>
+      <tr><td>Lusaka</td><td>Chawama Police Station</td><td>Lusaka, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Ndola</td><td>Chifubu Police Station</td><td>Ndola, Zambia</td><td></td></tr>
+      <tr><td>Kafue Road</td><td>Chilanga Police Station</td><td>Kafue Rd, Chilanga, Zambia</td><td></td></tr>
+      <tr><td>Lusaka</td><td>Chilenje Police Station</td><td>Lusaka, Zambia</td><td></td></tr>
+      <tr><td>Chipata</td><td>Chipata Central Police</td><td>Chipata, Zambia</td><td></td></tr>
+      <tr><td>Chirundu</td><td>Chirundu Police Station</td><td>Chirundu, Zambia</td><td></td></tr>
+      <tr><td>Chisamba</td><td>Chisamba Police Station</td><td>Chisamba, Zambia</td><td></td></tr>
+      <tr><td>Choma</td><td>Choma Police Station</td><td>Choma, Zambia</td><td></td></tr>
+      <tr><td>Lusaka</td><td>Emmasdale Police Station</td><td>T2, Lusaka, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Lusaka</td><td>Godfrey Miyanda Police Station</td><td>Lusaka, Zambia</td><td></td></tr>
+      <tr><td>Lusaka</td><td>Ibex Police Station</td><td>Unnamed Road, Lusaka, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Lusaka</td><td>International Airport Police Post</td><td>Kenneth Kaunda International, Lusaka, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Lusaka</td><td>Kabanana Police Station</td><td>Lusaka, Zambia</td><td></td></tr>
+      <tr><td>Lusaka</td><td>Kabwata Police Station</td><td>Burma Rd, Lusaka, Zambia</td><td></td></tr>
+      <tr><td>Mufulira</td><td>Kamuchanga Police Station</td><td>Mufulira, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Kapiri Mposhi</td><td>Kapiri Police Station</td><td>T2, Kapiri Mposhi, Zambia</td><td></td></tr>
+      <tr><td>Kabwe</td><td>Kasanda Police Station</td><td>Mine Hospital Area, Kabwe, Zambia</td><td>Mon–Sat: 8am–5pm</td></tr>
+      <tr><td>Lusaka</td><td>Kasempa Police Station</td><td>Ben Mwiinga Police Station, Lusaka</td><td>Mon–Fri: 7am–6pm</td></tr>
+      <tr><td>Kitwe</td><td>Kitwe Central Police</td><td>Nyerere Rd, Kitwe, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Lusaka</td><td>Longacres Police Station</td><td>Lusaka, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Lusaka</td><td>Lusaka Central Police Station</td><td>Church Rd, Lusaka, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Lusaka</td><td>Lusaka Police Post</td><td>Lubumbashi Rd, Lusaka, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Makeni Road</td><td>Makeni Police Station</td><td>Makeni Rd, Zambia</td><td></td></tr>
+      <tr><td>Lusaka</td><td>Manda Hill Police Post</td><td>Lusaka, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Ndola</td><td>Masala Police Station</td><td>Ndola, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Lusaka</td><td>Matero Police Station</td><td>Commonwealth Rd, Lusaka, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Kamwala South</td><td>Maxwell Sibongo Police Station</td><td>Kamwala South, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Mazabuka</td><td>Mazabuka Police Station</td><td>Mazabuka, Zambia</td><td></td></tr>
+      <tr><td>Mpulungu</td><td>Mpulungu Police Station</td><td>Mpulungu, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Sesheke</td><td>Mwandi Police Station</td><td>Sesheke, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Lusaka</td><td>Mwembeshi Police Station</td><td>Twikatane Rd, Lusaka, Zambia</td><td></td></tr>
+      <tr><td>Lusaka</td><td>Northmead Police Station</td><td>Landa Rd, Lusaka, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Lusaka</td><td>Prospect Police Station</td><td>Lusaka, Zambia</td><td></td></tr>
+      <tr><td>Kafue</td><td>Shikoswe Police Station</td><td>Kafue, Zambia</td><td></td></tr>
+      <tr><td>Lusaka</td><td>Simon Mwansa Kapwepwe Police Station</td><td>Lusaka, Zambia</td><td></td></tr>
+      <tr><td>Lusaka</td><td>Woodlands Police Station</td><td>Gizenga Rd, Lusaka, Zambia</td><td></td></tr>
+      <tr><td>Kitwe</td><td>Wusakili Police Station</td><td>Kitwe, Zambia</td><td></td></tr>
+      <tr><td>Lusaka</td><td>Zambia Police Headquarters</td><td>Government Rd, Lusaka, Zambia</td><td>Open 24 Hours</td></tr>
+      <tr><td>Kitwe</td><td>Zambia Police Headquarters</td><td>466 Kantanta St, Kitwe, Zambia</td><td></td></tr>
+      <tr><td>Luanshya</td><td>Zambia Police Service</td><td>Luanshya, Zambia</td><td></td></tr>
+      <tr><td>Katete</td><td>Zambia Police Service - Katete Stores</td><td>Katete, Zambia</td><td></td></tr>
+      <tr><td>Luanshya</td><td>Zambia Police Service Post</td><td>Luanshya, Zambia</td><td></td></tr>
+      <tr><td>Mufulira</td><td>Zambia Police Station</td><td>Mufulira, Zambia</td><td></td></tr>
+      <tr><td>Chililabombwe</td><td>Zambia Police Station - Main</td><td>Chililabombwe, Zambia</td><td>Open 24 Hours</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    function searchTable() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var table = document.getElementById("policeTable");
+      var tr = table.getElementsByTagName("tr");
+
+      for (var i = 1; i < tr.length; i++) {
+        var tds = tr[i].getElementsByTagName("td");
+        var found = false;
+        for (var j = 0; j < tds.length; j++) {
+          if (tds[j].innerHTML.toLowerCase().indexOf(filter) > -1) {
+            found = true;
+            break;
+          }
+        }
+        tr[i].style.display = found ? "" : "none";
+      }
+    }
+  </script>
+</body>
+</html>

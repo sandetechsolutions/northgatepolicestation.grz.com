@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Northgate Police Digital Portal</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      border: 15px solid;
+      border-image: linear-gradient(to bottom, blue, white, green) 1;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      width: 360px;
+      text-align: center;
+    }
+
+    .container img {
+      width: 120px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    select, input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 94%;
+      padding: 12px;
+      margin-top: 15px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #002244;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Logo -->
+    <img src="logo.jfif" alt="Zambia Police Logo" />
+    
+    <h2>Northgate Police Digital Portal</h2>
+
+    <!-- Dropdown Login Type -->
+    <select id="role">
+      <option value="citizen">Login as Citizen</option>
+      <option value="admin">Login as Admin</option>
+    </select><br />
+
+    <!-- Admin Fields -->
+    <input type="text" id="username" placeholder="Username (Admin only)" /><br />
+    <input type="password" id="password" placeholder="Password (Admin only)" /><br />
+
+    <button onclick="handleLogin()">Login</button>
+  </div>
+
+  <script>
+    function handleLogin() {
+      const role = document.getElementById("role").value;
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+
+      if (role === "admin") {
+        if (user === "NGPP" && pass === "8765") {
+          window.location.href = "https://docs.google.com/spreadsheets/d/1F1HhDlT-ns-c93BKuuw7-_OEbjKXlzCr6ATcq055hbs/edit?usp=sharing";
+        } else {
+          alert("Access Denied: Invalid admin credentials");
+        }
+      } else if (role === "citizen") {
+        window.location.href = "zpsdashboard.html";
+      }
+    }
+  </script>
+
+</body>
+</html>
